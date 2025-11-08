@@ -6,7 +6,7 @@ namespace APIVerve
 {
     public class WorkingDaysQueryOptions {
 public string country { get; set; }
-public integer year { get; set; }
-public integer month { get; set; }
+public int year { get; set; }
+public int month { get; set; }
 }
 }
