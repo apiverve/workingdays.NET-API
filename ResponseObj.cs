@@ -4,49 +4,52 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class nonWorkingDays
-{
-    [JsonProperty("date")]
-    public string date { get; set; }
+    /// <summary>
+    /// NonWorkingDays data
+    /// </summary>
+    public class NonWorkingDays
+    {
+        [JsonProperty("date")]
+        public string Date { get; set; }
 
-    [JsonProperty("reasons")]
-    public string[] reasons { get; set; }
+        [JsonProperty("reasons")]
+        public string[] Reasons { get; set; }
 
-    [JsonProperty("holiday_name")]
-    public object holidayname { get; set; }
+        [JsonProperty("holiday_name")]
+        public object Holidayname { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("workingDaysCount")]
+        public int WorkingDaysCount { get; set; }
 
-public class data
-{
-    [JsonProperty("workingDaysCount")]
-    public int workingDaysCount { get; set; }
+        [JsonProperty("nonWorkingDaysCount")]
+        public int NonWorkingDaysCount { get; set; }
 
-    [JsonProperty("nonWorkingDaysCount")]
-    public int nonWorkingDaysCount { get; set; }
+        [JsonProperty("workingDays")]
+        public string[] WorkingDays { get; set; }
 
-    [JsonProperty("workingDays")]
-    public string[] workingDays { get; set; }
+        [JsonProperty("nonWorkingDays")]
+        public NonWorkingDays[] NonWorkingDays { get; set; }
 
-    [JsonProperty("nonWorkingDays")]
-    public nonWorkingDays[] nonWorkingDays { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-}
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
